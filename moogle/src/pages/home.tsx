@@ -37,7 +37,7 @@ const home = () => {
 				alignItems='center'
 				sx={{ width: "100%", height: "100%" }}
 			>
-				<Grid item>
+				<Grid item sx={{ minWidth: "100%", backgroundColor: "#fe5f55" }}>
 					<Header />
 				</Grid>
 				<Grid item sx={{ width: "100%", height: "200px", paddingTop: "50px" }}>
