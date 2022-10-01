@@ -1,4 +1,4 @@
-EVERY TIME YOU GO TO CODE DO:
-git pull
-npm i
-npm run
+EVERY TIME YOU GO TO CODE DO: <br/>
+git pull <br/>
+npm i <br/>
+npm run <br/>
