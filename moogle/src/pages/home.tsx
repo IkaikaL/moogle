@@ -1,9 +1,24 @@
-import React from 'react'
+import React from "react";
+import { Container, Box, Typography, Grid } from "@mui/material";
 
 const home = () => {
-  return (
-    <div>home</div>
-  )
-}
+	return (
+		<Container>
+			<Grid
+				container
+				direction='column'
+				alignItems='center'
+				justifyContent='center'
+			>
+				<Grid item>
+					<Box></Box>
+				</Grid>
+				<Grid item>
+					<Box></Box>
+				</Grid>
+			</Grid>
+		</Container>
+	);
+};
 
-export default home
+export default home;
