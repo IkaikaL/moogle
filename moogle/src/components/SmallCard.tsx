@@ -5,20 +5,22 @@ import {
 	Grid,
 	Avatar,
 	Typography,
+	Button,
 	Box,
 	Divider,
 } from "@mui/material";
 
 type Props = {
-	icon: string;
-	purpose: string;
+	Icon: any;
+	purpose?: string;
 	content: string;
-	smallIcon: string;
+	SmallIcon?: any;
 	details: string;
+	secondDetails?: string;
 };
 
-const smallCard = (props: Props) => {
-	const { icon, purpose, content, smallIcon, details } = props;
+const SmallCard = (props: Props) => {
+	const { Icon, purpose, content, SmallIcon, details, secondDetails } = props;
 
 	return (
 		<Container
@@ -49,18 +51,14 @@ const smallCard = (props: Props) => {
 							sx={{ marginTop: "-50px", height: "70px", width: "70px" }}
 						>
 							<Card sx={{ height: "100%", width: "100%" }}>
-								<Avatar
-									sx={{ height: "100%", width: "100%" }}
-									src={icon}
-									alt='icon'
-								/>
+								<Icon sx={{ height: "100%", width: "100%" }} />
 							</Card>
 						</Grid>
-						<Grid item sx={{ margin: "10px" }}>
-							<Typography sx={{ fontSize: 20 }}>{purpose}</Typography>
-							<Typography sx={{ fontSize: 25 }}>{content}</Typography>
+						<Grid item sx={{ margin: "10px", width: "50%" }}>
+							<Typography sx={{ fontSize: 18 }}>{purpose}</Typography>
+							<Typography sx={{ fontSize: 20 }}>{content}</Typography>
 						</Grid>
-						<Grid item sx={{ height: "10px", width: "100%" }}>
+						<Grid item sx={{ height: "2px", width: "100%" }}>
 							<Divider variant='fullWidth' />
 						</Grid>
 					</Grid>
@@ -68,17 +66,20 @@ const smallCard = (props: Props) => {
 				<Grid item sx={{ width: "100%", margin: "10px" }}>
 					<Grid
 						container
-						direction='row'
+						direction='column'
 						justifyContent='flex-start'
-						alignItems='center'
+						alignItems='flex-start'
 					>
-						<Grid item>
-							<Box>
-								<Avatar src={smallIcon} alt='small icon' />
-							</Box>
-						</Grid>
+						{SmallIcon === undefined ? null : (
+							<Grid item>
+								<Box>
+									<SmallIcon />
+								</Box>
+							</Grid>
+						)}
 						<Grid item>
 							<Typography>{details}</Typography>
+							<Typography>{secondDetails}</Typography>
 						</Grid>
 					</Grid>
 				</Grid>
@@ -87,4 +88,4 @@ const smallCard = (props: Props) => {
 	);
 };
 
-export default smallCard;
+export default SmallCard;
